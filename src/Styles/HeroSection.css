@@ -1,0 +1,156 @@
+.hero {
+  padding: 2rem;
+  background-color: #f5f6ff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.hero__text {
+  max-width: 500px;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.hero__text h1 {
+  font-size: 2.5rem;
+  color: #1e1e2f;
+  margin-bottom: 1rem;
+}
+
+.hero__text p {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.search__bar {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search__bar input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  outline: none;
+}
+
+.search__bar button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search__bar button:hover {
+  background-color: #3730a3;
+}
+
+.hero__visuals {
+  position: relative;
+  width: 300px;
+  animation: slideInRight 1s ease-in-out;
+}
+
+.main__image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.highlight {
+  position: absolute;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  text-align: center;
+  max-width: 150px;
+}
+
+.highlight--courses {
+  top: -20px;
+  left: -40px;
+}
+
+.highlight--students {
+  bottom: -20px;
+  right: -40px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__visuals {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 2rem;
+  }
+
+  .highlight--courses {
+    top: -10px;
+    left: 10px;
+  }
+
+  .highlight--students {
+    bottom: -10px;
+    right: 10px;
+  }
+}

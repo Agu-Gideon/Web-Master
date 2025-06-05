@@ -1,0 +1,96 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #f2f2ff;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+}
+
+.logo-text h1 {
+  font-size: 1rem;
+  color: #3f3f8f;
+}
+
+.logo-text p {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.login-btn {
+  padding: 0.5rem 1rem;
+  background-color: #dcd6ff;
+  border-radius: 10px;
+  color: #5c5cfc;
+  font-weight: bold;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Hide menu toggle checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #f2f2ff;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    display: none;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}
