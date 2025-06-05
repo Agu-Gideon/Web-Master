@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/Profilepage.css";
+import { useNavigate } from "react-router-dom";
 
 const StudentProfile = () => {
   const [userData, setUserData] = useState({
@@ -12,10 +13,7 @@ const StudentProfile = () => {
     const fetchUser = async () => {
       try {
         const response = await new Promise((res) =>
-          setTimeout(
-            () => res({ name: "Lily Zhang", studentId: "1234567890" }),
-            1500
-          )
+          setTimeout(() => res({ name: "Gagu", studentId: "1234567890" }), 1500)
         );
 
         setUserData(response);
@@ -26,6 +24,11 @@ const StudentProfile = () => {
 
     fetchUser();
   }, []);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    sessionStorage.removeItem("jwtToken"); // Remove token
+    navigate("/login"); // Redirect to login
+  };
 
   return (
     <div className="student-profile">
@@ -78,7 +81,9 @@ const StudentProfile = () => {
           </div>
         </div>
 
-        <button className="logout-btn">Logout</button>
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </main>
     </div>
   );

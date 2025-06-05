@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -22,11 +23,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.logo img {
-  height: 40px;
-  width: 40px;
 }
 
 .logo-text h1 {
@@ -71,6 +67,21 @@ body {
 #menu-toggle {
   display: none;
 }
+.profile-icon {
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  background: #eaeaff;
+  color: #5c5cfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: background 0.2s;
+}
+.profile-icon:hover {
+  background: #dcd6ff;
+}
 
 /* Responsive for mobile */
 @media (max-width: 768px) {
@@ -92,5 +103,8 @@ body {
 
   #menu-toggle:checked ~ .nav-links {
     display: flex;
+  }
+  .profile-icon {
+    display: none;
   }
 }
