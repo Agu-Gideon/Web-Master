@@ -1,5 +1,5 @@
 import "../Styles/HeroSection.css";
-import heroImage from "../Assets/HeroImage.png";
+import heroImage from "../Assets/Hero-Image.png";
 
 const HeroSection = () => {
   return (
