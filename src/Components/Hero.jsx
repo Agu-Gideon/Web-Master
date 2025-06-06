@@ -6,9 +6,7 @@ const HeroSection = () => {
     <section className="hero">
       <div className="hero__content">
         <div className="hero__text">
-          <h1>
-            Engaging & <br /> Accessible Online <br /> Courses For All
-          </h1>
+          <h1>Engaging & Accessible Online Courses For All</h1>
           <p>
             We offer a range of excellent training and certification courses
             suitable for everyone and anywhere.
