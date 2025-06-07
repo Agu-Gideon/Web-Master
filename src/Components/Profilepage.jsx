@@ -2,21 +2,23 @@ import React, { useEffect, useState } from "react";
 import "../Styles/Profilepage.css";
 import { useNavigate } from "react-router-dom";
 import Courses from "./Courses-Section";
+import Avatar from "../assets/icon.png";
 
 const StudentProfile = () => {
+  // State for user data
   const [userData, setUserData] = useState({
     name: "Loading...",
     studentId: "--------",
   });
 
+  // Fetch user data on component mount (simulated with setTimeout)
   useEffect(() => {
-    // This is to fecth the users Data
+    // Simulate fetching user data from an API
     const fetchUser = async () => {
       try {
         const response = await new Promise((res) =>
-          setTimeout(() => res({ name: "Gagu", studentId: "1234567890" }), 1500)
+          setTimeout(() => res({ name: "Agu ", studentId: "1234567890" }), 1500)
         );
-
         setUserData(response);
       } catch (error) {
         console.error("Failed to fetch user data", error);
@@ -25,25 +27,27 @@ const StudentProfile = () => {
 
     fetchUser();
   }, []);
+
   const navigate = useNavigate();
+
+  // Handle user logout: remove token and redirect to login page
   const handleLogout = () => {
-    sessionStorage.removeItem("jwtToken"); // Remove token
-    navigate("/login"); // Redirect to login
+    sessionStorage.removeItem("jwtToken");
+    navigate("/login");
   };
 
+  // Render the profile page UI
   return (
     <div className="student-profile">
       <main className="main">
+        {/* Profile info section */}
         <div className="profile-info">
-          <img
-            src="https://randomuser.me/api/portraits/women/44.jpg"
-            alt="Profile"
-            className="profile-pic"
-          />
+          <img src={Avatar} alt="Profile" className="profile-pic" />
           <h2 className="greeting">Greetings, {userData.name}!</h2>
           <p className="student-id">Student ID: {userData.studentId}</p>
         </div>
 
+        {/* Academic progress and course enrollment sections */}
         <div className="progress-section">
           <div className="progress-box">
             <h4>Academic Progress</h4>
@@ -66,10 +70,13 @@ const StudentProfile = () => {
             <button>View course details</button>
           </div>
         </div>
+
+        {/* Courses section */}
         <>
           <Courses />
-          {/* /*added the courses section */}
         </>
+
+        {/* Logout button */}
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>

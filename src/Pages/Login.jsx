@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Login.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 // Utility function to base64 encode strings
 function base64Encode(str) {
@@ -12,6 +13,7 @@ const Login = () => {
   // State variables for form fields, loading, and error messages
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -64,13 +66,18 @@ const Login = () => {
       <div className="login-left">
         <h2>Welcome to MDM</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text.
+          Empower your learning journey with our all-in-one education platform.
+          Access courses, track your progress, and unlock new opportunities for
+          growth and success.
         </p>
-        <button className="know-more">Know More</button>
+        <a href="/">
+          {" "}
+          <button className="know-more">Know More</button>
+        </a>
       </div>
       <div className="login-right">
         <h2>Signin</h2>
+
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -79,13 +86,24 @@ const Login = () => {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
-          <input
-            type="password"
-            placeholder="Enter Password ..."
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div className="password-input-wrapper">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter Password ..."
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            {/* {Toggle Password Visibility} */}
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword((prev) => !prev)}
+              tabIndex={0}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <FaEye /> : <FaEyeSlash />}
+            </span>
+          </div>
           <button type="submit" disabled={loading}>
             {loading ? "Logging in..." : "LOGIN"}
           </button>

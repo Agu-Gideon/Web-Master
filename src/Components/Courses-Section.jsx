@@ -79,7 +79,7 @@ const courses = [
 const Courses = () => {
   return (
     // Section containing all courses
-    <section className="courses-section">
+    <section className="courses-section" id="courses">
       <h2 className="section-title">Pick A Course To Get Started</h2>
       <div className="courses-grid">
         {/* Map through courses array and render a card for each course */}

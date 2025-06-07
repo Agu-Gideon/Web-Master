@@ -92,7 +92,29 @@ form input {
   border-radius: 4px;
   font-size: 1rem;
 }
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
 
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #4f46e5;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
 form button {
   padding: 0.75rem 1rem;
   background-color: #4f46e5;
@@ -106,6 +128,17 @@ form button {
 
 form button:hover {
   background-color: #0056b3;
+}
+
+.error-message {
+  color: #e53935;
+  background: #ffeaea;
+  border: 1px solid #e53935;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
 }
 
 /* Responsive Design */

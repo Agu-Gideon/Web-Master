@@ -4,10 +4,8 @@
 component folder as well
 
 // PrivateRoute component protects routes from unauthenticated access
-// If a JWT token exists in sessionStorage, render the children (protected content)
-// Otherwise, redirect the user to the login page
-
-/
+// If a JWT token exists in sessionStorage,it renders the children (protected content)
+Otherwise, redirect the user to the login page//
 
 - Login.jsx
 - ***
@@ -26,11 +24,18 @@ component folder as well
 - - react-router-dom (for navigation)
 - - Login.css (for styling)
 -
-- Usage:
-- Import and use as a route/page in your React Router setup. \*
+-
 
 // Navbar component displays the top navigation bar with logo, links, and login/profile button
 
 // HeroSection component displays the main landing section with a headline, description, search bar, and image
 
 // Courses component renders the courses section with a grid of course cards
+
+// StudentProfile component displays the user's profile, progress, and enrolled courses
+
+// Contact componenet renders the footer that has the contact form
+
+// Homepage renders all the components in the landing page
+
+// Member page renders the components on the profile page
