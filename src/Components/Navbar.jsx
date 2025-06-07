@@ -2,11 +2,13 @@ import React from "react";
 import "../Styles/Navbar.css";
 
 const Navbar = () => {
-  // Check if user is logged in by looking for the JWT token
+  // Check if user is logged in by looking for a JWT token in sessionStorage
   const isLoggedIn = !!sessionStorage.getItem("jwtToken");
 
   return (
+    // Main navigation header
     <header className="navbar">
+      {/* Logo section with site name and tagline */}
       <a href="/">
         <div className="logo">
           <div className="logo-text">
@@ -15,30 +17,33 @@ const Navbar = () => {
           </div>
         </div>
       </a>
+      <div className="linkHold">
+        {/* Hamburger menu toggle for mobile view */}
+        <input type="checkbox" id="menu-toggle" />
+        <label htmlFor="menu-toggle" className="menu-icon">
+          &#9776;
+        </label>
 
-      <input type="checkbox" id="menu-toggle" />
-      <label htmlFor="menu-toggle" className="menu-icon">
-        &#9776;
-      </label>
+        {/* Navigation links */}
+        <nav className="nav-links">
+          <a href="#courses">Courses</a>
+          <a href="/member">Student ID Card</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <nav className="nav-links">
-        <a href="#courses">Courses</a>
-        <a href="/member">Student ID Card</a>
-        <a href="#contact">Contact</a>
-        {/* Conditionally render login button or profile icon */}
+        {/* Show Login button if not logged in, else show profile icon */}
         {!isLoggedIn ? (
           <a href="/login" className="login-btn">
             Login
           </a>
         ) : (
           <a href="/member" className="profile-icon" title="Profile">
-            {/* You can use an emoji, SVG, or an <img> for the icon */}
             <span role="img" aria-label="profile">
               👤
             </span>
           </a>
         )}
-      </nav>
+      </div>
     </header>
   );
 };

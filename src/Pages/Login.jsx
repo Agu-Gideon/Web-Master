@@ -31,11 +31,14 @@ const Login = () => {
 
     try {
       // Send POST request to authentication endpoint
-      const response = await fetch("/api/auth/token", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        "https://apiservicedev.bizsofthrm.com/api/auth/token",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
       const data = await response.json();
 
       // If authentication is successful, store JWT and redirect

@@ -36,6 +36,12 @@ body {
 }
 
 /* Navigation Links */
+.linkHold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -104,7 +110,7 @@ body {
   #menu-toggle:checked ~ .nav-links {
     display: flex;
   }
-  .profile-icon {
-    display: none;
+  .linkHold {
+    flex-direction: row-reverse;
   }
 }

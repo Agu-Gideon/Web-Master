@@ -1,10 +1,12 @@
 import "../Styles/Courses-Section.css";
+// Import course images
 import XD from "../assets/Adobe_XD.jpeg";
 import Photoshop from "../assets/graphics.jpeg";
 import StudentTheory from "../assets/Student_fundamental.jpeg";
-// import DesignBasics from "../assets/Design_Basics.png";
 import UIUX from "../assets/UI.jpeg";
 import OnlineLearning from "../assets/Intaractive.jpeg";
+
+// Array of course objects, each containing details for a course card
 const courses = [
   {
     id: 1,
@@ -76,9 +78,11 @@ const courses = [
 
 const Courses = () => {
   return (
+    // Section containing all courses
     <section className="courses-section">
       <h2 className="section-title">Pick A Course To Get Started</h2>
       <div className="courses-grid">
+        {/* Map through courses array and render a card for each course */}
         {courses.map((course) => (
           <div className="course-card" key={course.id}>
             <img

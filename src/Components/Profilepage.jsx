@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/Profilepage.css";
 import { useNavigate } from "react-router-dom";
+import Courses from "./Courses-Section";
 
 const StudentProfile = () => {
   const [userData, setUserData] = useState({
@@ -64,23 +65,11 @@ const StudentProfile = () => {
             </p>
             <button>View course details</button>
           </div>
-
-          <div className="course-cards">
-            <div className="course-card">
-              <img
-                src="https://source.unsplash.com/300x160/?abstract,education"
-                alt="Course 1"
-              />
-            </div>
-            <div className="course-card">
-              <img
-                src="https://source.unsplash.com/300x160/?abstract,learning"
-                alt="Course 2"
-              />
-            </div>
-          </div>
         </div>
-
+        <>
+          <Courses />
+          {/* /*added the courses section */}
+        </>
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>
