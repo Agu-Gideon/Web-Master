@@ -64,7 +64,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-left">
-        <h2>Welcome to MDM</h2>
+        <h2>Welcome to Web Master</h2>
         <p>
           Empower your learning journey with our all-in-one education platform.
           Access courses, track your progress, and unlock new opportunities for
