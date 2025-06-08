@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   // Check if user is logged in by looking for a JWT token in sessionStorage
@@ -27,7 +28,7 @@ const Navbar = () => {
         {/* Navigation links */}
         <nav className="nav-links">
           <a href="#courses">Courses</a>
-          <a href="/member">Student ID Card</a>
+           <Link to="/member">Student ID Card</Link>
           <a href="#contact">Contact</a>
         </nav>
 
